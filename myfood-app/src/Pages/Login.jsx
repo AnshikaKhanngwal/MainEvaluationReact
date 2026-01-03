@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -9,9 +9,11 @@ const Login = () => {
 
     function handleLogin(){
         if(email==="admin@gmail.com" && password==="admin1234"){
+            // localStorage.setItem("isLoggedIn","True")
             alert("Login to Admin Page")
             Navigate("/adminDashboard")
         }else if(email==="customer@gmail.com" && password==="customer1234"){
+           localStorage.setItem("isLoggedIn","True")
             alert("Login Succesful")
             Navigate("/Dashboard")
         }else{
@@ -20,10 +22,12 @@ const Login = () => {
     }
   return (
     <div>
+       
         <h1>Login Page</h1>
-      <input type="email" value={email} placeholder='Enter Email' onChange={(e)=>setEmail(e.target.value) } />
-       <input type="password" value={password} placeholder='Enter Password' onChange={(e)=>setPassword(e.target.value) } />
+      <input type="email" value={email} placeholder='Enter Email' onChange={(e)=>setEmail(e.target.value) } style={{height:20}}/> 
+       <input type="password" value={password} placeholder='Enter Password' onChange={(e)=>setPassword(e.target.value) } style={{height:20}}/>
        <button onClick={handleLogin}>Login</button>
+    
     </div>
   )
 }
