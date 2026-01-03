@@ -24,9 +24,9 @@ const Login = () => {
     <div>
        
         <h1>Login Page</h1>
-      <input type="email" value={email} placeholder='Enter Email' onChange={(e)=>setEmail(e.target.value) } style={{height:20}}/> 
-       <input type="password" value={password} placeholder='Enter Password' onChange={(e)=>setPassword(e.target.value) } style={{height:20}}/>
-       <button onClick={handleLogin}>Login</button>
+      <input type="email" value={email} placeholder='Enter Email' onChange={(e)=>setEmail(e.target.value) } style={{height:20, width:200, textAlign:"center"}}/> <br /> <br />
+       <input type="password" value={password} placeholder='Enter Password' onChange={(e)=>setPassword(e.target.value) } style={{height:20, width:200,textAlign:"center" }}/> <br /><br />
+       <button onClick={handleLogin} style={{background:"blue", color:"white"}}>Login</button>
     
     </div>
   )
